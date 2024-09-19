@@ -47,9 +47,18 @@ struct ConcourseApp: App {
         
         // MARK: ICAO 8643 Windows
         Window("ICAO 8643 Type Designators", id: "icao8643") {
-            ContentUnavailableView("ICAO 8643", systemImage: "i.square", description: Text("This page is not yet implemented."))
+            IcaoTypeView()
         }
         .commandsRemoved()
+        
+        WindowGroup(for: IcaoType.self) { $ict in
+            if let ict {
+                AddIcaoType(type: ict)
+            }
+        }
+        .commandsRemoved()
+        .modelContainer(sharedModelContainer)
+        .windowResizability(.contentSize)
         
         // MARK: Type Designator Windows
         Window("New Type Designator", id: "ntd") {
