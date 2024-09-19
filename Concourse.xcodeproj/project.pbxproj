@@ -79,6 +79,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
+				ORGANIZATIONNAME = "Holding Pattern Industries";
 				TargetAttributes = {
 					7AD14A4D2C9BD05A00752A43 = {
 						CreatedOnToolsVersion = 16.0;
