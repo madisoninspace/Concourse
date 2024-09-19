@@ -9,14 +9,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var screen: AppScreen? = .aircraft
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        NavigationSplitView(sidebar: {
+            Sidebar(selection: $screen)
+                .frame(width: 225.0)
+        }, detail: {
+            DetailColumn(screen: screen)
+        })
+        .frame(minWidth: 1280.0, minHeight: 600.0)
     }
 }
 
